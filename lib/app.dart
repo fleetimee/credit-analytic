@@ -21,12 +21,12 @@ class App extends StatelessWidget{
       // home: MainPage(),
       routes: {
         // MyRoutes.LANGKAH:(context)=>Langkah(),
-        MyRoutes.LOGIN_PAGE:(context)=>LoginScreen(),
-        MyRoutes.MAIN_PAGE:(context)=>MainPage(),
+        // MyRoutes.MAIN_PAGE:(context)=>MainPage(),
         MyRoutes.HOME:(context)=>Home(),
-       MyRoutes.MAIN_PAGE2:(context)=>MainPage2(),
+        MyRoutes.MAIN_PAGE2:(context)=>MainPage2(),
         MyRoutes.USER_EDIT_PAGE:(context)=>UserEditPage(),
         MyRoutes.USER_TAMBAH_PAGE:(context)=>UserTambahPage(),
+        MyRoutes.LOGIN_PAGE:(context)=>LoginScreen(),
 
       },
         // initialRoute: MyRoutes.LOGIN,

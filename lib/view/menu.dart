@@ -5,20 +5,22 @@ import 'package:appku/view/input_data.dart';
 import 'package:appku/view/manual.dart';
 import 'package:appku/view/tab/list_user.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_session/flutter_session.dart';
 
 class MENU_DASH extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         overflow: Overflow.visible,
         fit: StackFit.loose,
         children: <Widget>[
           ClipPath(
-            clipper: ClippingClass(),
+            // clipper: ClippingClass(),
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height*4/7,
+              // height: MediaQuery.of(context).size.height*4/7,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -51,6 +53,13 @@ class MENU_DASH extends StatelessWidget {
                       fontSize: 32,
                     )
                 ),
+                // Text(
+                //     "Hi John",
+                //     style: TextStyle(
+                //       color: Colors.white,
+                //       fontSize: 32,
+                //     )
+                // ),
                 Text(
                     "Get your laundry washed, folded \nand delivered straight to your door.",
                     style: TextStyle(
@@ -63,7 +72,7 @@ class MENU_DASH extends StatelessWidget {
           ),
           Positioned(
             left: 30,
-            top: 280,
+            top: 300,
             right: 20,
             child: Row(
               children: <Widget>[
@@ -84,7 +93,7 @@ class MENU_DASH extends StatelessWidget {
           ),
           Positioned(
             left: 210,
-            top: 280,
+            top: 300,
             right: 20,
             child: Row(
               children: <Widget>[
@@ -106,7 +115,7 @@ class MENU_DASH extends StatelessWidget {
 
           Positioned(
             left: 30,
-            top: 480,
+            top: 500,
             right: 20,
             child: Row(
               children: <Widget>[
@@ -127,7 +136,7 @@ class MENU_DASH extends StatelessWidget {
           ),
           Positioned(
             left: 210,
-            top: 480,
+            top: 500,
             right: 20,
             child: Row(
               children: <Widget>[
@@ -162,7 +171,7 @@ class MENU_DASH extends StatelessWidget {
       child: Card(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20)
+            borderRadius: BorderRadius.circular(30)
         ),
         elevation: 10,
         child: Padding(

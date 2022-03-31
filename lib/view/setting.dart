@@ -1,3 +1,4 @@
+import 'package:appku/view/login.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 
@@ -36,10 +37,50 @@ class _SettingState extends State<Setting>{
             SettingsTile.navigation(
               leading: Icon(Icons.logout),
               title: Text('Logout'),
+              onPressed:(Logout){
+
+                //Navigator.popUntil(context, ModalRoute.withName('/'));
+                Navigator.pop(context,true); // It worked for me instead of above line
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()),);
+
+              },
             ),
           ],
         ),
       ],
     );
   }
+  showAlertDialog(BuildContext context) {
+
+    // set up the buttons
+    Widget cancelButton = TextButton(
+      child: Text("Cancel"),
+      onPressed:  () {},
+    );
+    Widget continueButton = TextButton(
+      child: Text("Continue"),
+      onPressed:  () {},
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("AlertDialog"),
+      content: Text("Would you like to continue learning how to use Flutter alerts?"),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
 }
+
+

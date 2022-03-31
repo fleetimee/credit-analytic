@@ -35,6 +35,7 @@ class _ListUserState extends State<ListUser> {
                         future: APIAmbilSemuaUser(),
                         builder: ((context, snapshot) {
                           print(snapshot.hasData);
+                          print(snapshot.hasData);
 
                           if (snapshot.hasData) {
                             ResponseAPI? resp = snapshot.data as ResponseAPI?;

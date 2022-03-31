@@ -1,70 +1,83 @@
 import 'package:flutter/material.dart';
-import 'package:notification_list/notification_list.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 
-void main() {
-  runApp(Notice_list());
-}
+void main() => runApp(const Notice_list());
 
 class Notice_list extends StatelessWidget {
+  const Notice_list({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Notification List Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'Slidable Example',
       home: Scaffold(
-        body: Notifications(
-          notifications: [
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/26c56a4fee725d5b.jpg",
-              "title": "Realme 8",
-            },
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/1450ec91f45d72d8.jpg",
-              "title": "TV Realme/Mi",
-            },
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/e15dec72a648ed51.jpg",
-              "title": "Samsung F62",
-            },
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/26c56a4fee725d5b.jpg",
-              "title": "Realme 8",
-            },
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/1450ec91f45d72d8.jpg",
-              "title": "TV Realme/Mi",
-            },
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/e15dec72a648ed51.jpg",
-              "title": "Samsung F62",
-            },
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/26c56a4fee725d5b.jpg",
-              "title": "Realme 8",
-            },
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/1450ec91f45d72d8.jpg",
-              "title": "TV Realme/Mi",
-            },
-            {
-              "image":
-              "https://rukminim1.flixcart.com/flap/500/500/image/e15dec72a648ed51.jpg",
-              "title": "Samsung F62",
-            },
+        body: ListView(
+          children: [
+            Slidable(
+              key: const ValueKey(1),
+
+              endActionPane: ActionPane(
+                motion: const ScrollMotion(),
+                dismissible: DismissiblePane(onDismissed: () {}),
+                children: const [
+                  SlidableAction(
+                    onPressed: doNothing,
+                    backgroundColor: Color(0xFFFE4A49),
+                    foregroundColor: Colors.white,
+                    icon: Icons.delete,
+                    label: 'Delete',
+                  ),
+                ],
+              ),
+
+              child: const ListTile(title: Text('Doni')),
+            ),
+            Slidable(
+              key: const ValueKey(1),
+
+              endActionPane: ActionPane(
+                motion: const ScrollMotion(),
+                dismissible: DismissiblePane(onDismissed: () {}),
+                children: const [
+                  SlidableAction(
+                    onPressed: doNothing,
+                    backgroundColor: Color(0xFFFE4A49),
+                    foregroundColor: Colors.white,
+                    icon: Icons.delete,
+                    label: 'Delete',
+                  ),
+                ],
+              ),
+
+              child: const ListTile(title: Text('Toni')),
+            ),
+            Slidable(
+              key: const ValueKey(1),
+
+              endActionPane: ActionPane(
+                motion: const ScrollMotion(),
+                dismissible: DismissiblePane(onDismissed: () {}),
+                children: const [
+                  SlidableAction(
+                    onPressed: doNothing,
+                    backgroundColor: Color(0xFFFE4A49),
+                    foregroundColor: Colors.white,
+                    icon: Icons.delete,
+                    label: 'Delete',
+                  ),
+                ],
+              ),
+
+              child: const ListTile(title: Text('Karmi')),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+void doNothing(BuildContext context) {}
